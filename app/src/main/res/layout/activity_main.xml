@@ -1,0 +1,121 @@
+    <?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/settings_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#009999"
+        android:text="Настройки"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/start_tracking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/stop_tracking"
+        android:layout_marginBottom="2dp"
+        android:backgroundTint="#009999"
+        android:text="Начать слежение"
+        app:layout_constraintBottom_toTopOf="@+id/stop_tracking"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/stop_tracking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/settings_button"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#009999"
+        android:text="Остановить слежение"
+        app:layout_constraintBottom_toTopOf="@+id/settings_button"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/first_region_title"
+        android:layout_width="410dp"
+        android:layout_height="46dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Время проведенное в точке"
+        android:textColor="#009999"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <TextView
+        android:id="@+id/period_in_region"
+        android:layout_width="409dp"
+        android:layout_height="47dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:shadowColor="#009999"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/first_region_title" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/latitude"
+            android:layout_width="203dp"
+            android:layout_height="match_parent"
+            android:hint="Широта"
+            android:inputType="numberDecimal"
+            android:textColor="#009999" />
+
+        <EditText
+            android:id="@+id/longitude"
+            android:layout_width="207dp"
+            android:layout_height="match_parent"
+            android:hint="Долгота"
+            android:inputType="numberDecimal"
+            android:textColor="#009999" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="410dp"
+        android:layout_height="47dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <Button
+            android:id="@+id/update"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#009999"
+            android:text="Обновить" />
+
+        <Button
+            android:id="@+id/change_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#009999"
+            android:text="Перезаписать" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
